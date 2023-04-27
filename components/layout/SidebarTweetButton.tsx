@@ -1,11 +1,19 @@
 import { useRouter } from "next/router";
+import { useCallback } from "react";
 import { FaFeather} from 'react-icons/fa'
+
+import useLoginModal from "@/hooks/useLoginModal";
 
 const SidebarTweetButton = () => {
     const router = useRouter();
+    const loginModal = useLoginModal();
+
+    const onClick = useCallback(() => {
+        loginModal.onOpen();
+    }, [loginModal]);
 
     return (
-        <div onClick={() => router.push('/')}>
+        <div onClick={onClick}>
             {/* Mobile view */}
             <div
                 className="
@@ -16,7 +24,7 @@ const SidebarTweetButton = () => {
                     w-14
                     p-4
                     flex
-                    items-center0
+                    items-center
                     justify-center
                     bg-sky-500
                     hover:bg-opacity-80
@@ -36,7 +44,7 @@ const SidebarTweetButton = () => {
             rounded-full
             bg-sky-500
             hover:bg-opacity-90
-            cursor:pointer
+            cursor-pointer
             transition
             "
             >
@@ -49,7 +57,7 @@ const SidebarTweetButton = () => {
                 text-[20px]
                 ">
                     {/* sidebar tweet button label */}
-                    Tweet 
+                    Share an idea 
                 </p>
             </div>
         </div>
