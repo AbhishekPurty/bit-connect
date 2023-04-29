@@ -57,7 +57,7 @@ const SidebarTweetButton = () => {
                 text-[20px]
                 ">
                     {/* sidebar tweet button label */}
-                    Share an idea 
+                    Share an !dea 
                 </p>
             </div>
         </div>
