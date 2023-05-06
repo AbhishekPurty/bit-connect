@@ -17,6 +17,8 @@ const SidebarTweetButton = () => {
             {/* Mobile view */}
             <div
                 className="
+                    ml-2
+                    flex-row
                     mt-6
                     lg:hidden
                     rounded-full
